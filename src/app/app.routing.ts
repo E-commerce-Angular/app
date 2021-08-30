@@ -11,6 +11,34 @@ export const rootRouterConfig: Routes = [
   },
   {
     path: "",
+    component: AdminLayoutComponent,
+    children: [
+      {
+        path: "",
+        loadChildren: () =>
+          import("./modules/productos/productos.module").then(
+            m => m.ProductosModule
+          ),
+        data: { title: "Producto" }
+      }
+    ]
+  },
+  {
+    path: "",
+    component: AdminLayoutComponent,
+    children: [
+      {
+        path: "",
+        loadChildren: () =>
+          import("./modules/usuarios/usuarios.module").then(
+            m => m.UsuariosModule
+          ),
+        data: { title: "Usuario" }
+      }
+    ]
+  },
+  {
+    path: "",
     component: AuthLayoutComponent,
     children: [
       {
