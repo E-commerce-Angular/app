@@ -28,12 +28,19 @@ interface IBadge {
 export class NavigationService {
   constructor() {}
   iconMenu: IMenuItem[] = [
-    {
-      name: "Blank",
+     {
+      name: "Productos",
       type: "link",
-      tooltip: "Blank",
-      icon: "dashboard",
-      state: "others/blank"
+      tooltip: "Productos",
+      icon: "qr_code_scanner",
+      state: "producto/crearProducto"
+    },
+    {
+      name: "Usuarios",
+      type: "link",
+      tooltip: "Usuarios",
+      icon: "person",
+      state: "usuario/crearUsuario"
     }
   ];
 
