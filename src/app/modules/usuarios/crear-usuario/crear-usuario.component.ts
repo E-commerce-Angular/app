@@ -8,11 +8,11 @@ import { UsuarioService } from "../services/usuarios.service";
 
 export class CrearUsuarioComponent implements OnInit, OnDestroy {
   constructor(private usuarioService: UsuarioService) {}
-  ngOnInit(): void {
-    throw new Error("Method not implemented.");
-  }
+  // ngOnInit(): void {
+  //   throw new Error("Method not implemented.");
+  // }
   //WTF
-  ngOninit() {
+  ngOnInit() {
     this.getUsuarios();
   }
   getUsuarios() {
