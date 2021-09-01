@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -21,13 +21,19 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { ChartsModule } from 'ng2-charts';
 import { FileUploadModule } from 'ng2-file-upload';
 import { SharedModule } from './../../shared/shared.module';
-import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
+
+import { MatStepperModule } from '@angular/material/stepper';
+
+import { CrearUsuarioComponent } from './usuario/crear-usuario.component';
+import { ConsultarUsuarioComponent } from './consulta-usuario/consulta-usuario.component';
 import { UsuariosRoutes } from './usuarios.routing';
 import {UsuarioService} from './services/usuarios.service'
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     MatListModule,
     MatIconModule,
     MatButtonModule,
@@ -47,9 +53,15 @@ import {UsuarioService} from './services/usuarios.service'
     FileUploadModule,
     SharedModule,
     HttpClientModule,
+    MatStepperModule,
     RouterModule.forChild(UsuariosRoutes)//LEVANTA LOS MODULOS HIJO
   ],
-  declarations: [CrearUsuarioComponent],
-  providers: [UsuarioService]
+  declarations: [
+    CrearUsuarioComponent,
+    ConsultarUsuarioComponent
+  ],
+  providers: [
+    UsuarioService
+  ]
 })
 export class UsuariosModule { }
