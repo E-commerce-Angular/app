@@ -14,7 +14,7 @@ export class ConsultarUsuarioComponent implements OnInit, OnDestroy {
   }
   getUsuarios() {
     this.usuarioService.getUsuarios().subscribe(data => {
-      debugger;
+      //debugger;
     })
   }
 

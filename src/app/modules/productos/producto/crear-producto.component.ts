@@ -16,7 +16,7 @@ export class CrearProductoComponent implements OnInit, OnDestroy{
     }
     getProductos(){
         this.productoService.getProductos().subscribe(data =>{
-            debugger; 
+            //debugger; 
         })
     }
 

@@ -1,6 +1,6 @@
-  <mat-card class="p-0">
+    <mat-card class="p-0">
     <mat-card-title class="">
-      <div class="card-title-text">Verticle</div>
+      <div class="card-title-text">Registro de Usuario</div>
       <mat-divider></mat-divider>
     </mat-card-title>
     <mat-card-content>
@@ -23,7 +23,7 @@
           <form [formGroup]="secondFormGroup">
             <ng-template matStepLabel>Escribe tu DNI</ng-template>
             <mat-form-field>
-              <input matInput placeholder="DNI" formControlName="dni" required>
+              <input matInput placeholder="DNI" formControlName="dni" required maxlength="8">
             </mat-form-field>
             <div fxLayout="row">
               <button mat-raised-button color="accent" matStepperPrevious>Atras</button>
@@ -34,15 +34,13 @@
         </mat-step>
         <mat-step>
           <ng-template matStepLabel>Confirmación</ng-template>
-          <div>
-            <mat-icon class="pt-1" [style.fontSize]="'36px'">LISTO</mat-icon>
-          </div>
           <div class="pb-1 mb-1"> Has rellenado el formulario con exito.</div>
-          <div>
+          <div class="cont-buttons">
             <button mat-raised-button color="accent" matStepperPrevious>Atras</button>
-            <button mat-raised-button color="primary" matStepperNext>Confirmar</button>
+            <button mat-raised-button color="primary" matStepperNext (click)="submit()">Confirmar</button>
           </div>
         </mat-step>
       </mat-vertical-stepper>
     </mat-card-content>
   </mat-card>
+
