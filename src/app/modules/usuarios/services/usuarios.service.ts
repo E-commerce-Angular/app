@@ -19,5 +19,7 @@ export class UsuarioService {
     return this.http.put(this.usuarioUrl + "/usuario/" + idUsuario, usuario);
   }
 
-
+  borrarUsuario(idUsuario, usuario) {
+    return this.http.delete(this.usuarioUrl + "/usuario/" + idUsuario, usuario);
+  }
 }
