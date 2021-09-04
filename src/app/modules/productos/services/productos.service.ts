@@ -16,7 +16,14 @@ export class ProductoService {
   }
   editarProducto(idProducto, producto) {
     return this.http.put(
-      this.productoUrl + "/producto/" + idProducto, producto);
+      this.productoUrl + "/producto/" + idProducto,
+      producto
+    );
   }
-
+  borrarProducto(idProducto, producto) {
+    return this.http.delete(
+      this.productoUrl + "/producto/" + idProducto,
+      producto
+    );
+  }
 }
