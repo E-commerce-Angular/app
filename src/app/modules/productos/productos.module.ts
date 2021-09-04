@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -21,6 +21,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { ChartsModule } from 'ng2-charts';
 import { FileUploadModule } from 'ng2-file-upload';
 import { SharedModule } from './../../shared/shared.module';
+import { MatStepperModule } from '@angular/material/stepper'; //FALTABA ESTO
 import { CrearProductoComponent } from './producto/crear-producto.component';
 import { ProductosRoutes } from './productos.routing';
 import {ProductoService} from './services/productos.service'
@@ -28,6 +29,7 @@ import {ProductoService} from './services/productos.service'
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     MatListModule,
     MatIconModule,
     MatButtonModule,
@@ -46,6 +48,7 @@ import {ProductoService} from './services/productos.service'
     ChartsModule,
     FileUploadModule,
     SharedModule,
+    MatStepperModule,
     HttpClientModule,
     RouterModule.forChild(ProductosRoutes)//LEVANTA LOS MODULOS HIJO
   ],

@@ -1,26 +1,43 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
-import { ProductoService } from "../services/productos.service";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+
 @Component({
     selector: 'app-producto',
     templateUrl: 'crear-producto.component.html',
     styleUrls: ['crear-producto.component.scss']
 })
 
-export class CrearProductoComponent implements OnInit, OnDestroy{
-    constructor(private productoService: ProductoService){
+export class CrearProductoComponent implements OnInit{
 
-    }
+    productoFrom: FormGroup;//FormGroup del producto
+    
+    constructor(private fb: FormBuilder){}
   
     ngOnInit(){
-        this.getProductos(); 
+        this.productoFrom = this.fb.group({
+            nombreProducto:["", Validators.required],
+            precio:["",Validators.required],
+            detalle:["",Validators.required],
+            imagen:[""],
+            disponible:[""]
+        });
     }
-    getProductos(){
-        this.productoService.getProductos().subscribe(data =>{
-            //debugger; 
-        })
-    }
+    //ESTO ACA NO VA
+    // getProductos(){
+    //     this.productoService.getProductos().subscribe(data =>{
+    //         //debugger; 
+    //     })
 
-    ngOnDestroy(){
+    
+    submit(){
+        console.log(this.productoFrom.value);
+        this.productoFrom.setValue({
+            nombreProducto:"",
+            precio:"",
+            detalle:"",
+            imagen:"",
+            disponible:""
+        });
 
     }
 }
