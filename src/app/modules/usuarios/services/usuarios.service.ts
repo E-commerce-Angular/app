@@ -15,5 +15,9 @@ export class UsuarioService {
     return this.http.get(this.usuarioUrl + "/usuarios");
   }
 
+  editarUsuario(idUsuario, usuario) {
+    return this.http.put(this.usuarioUrl + "/usuario/" + idUsuario, usuario);
+  }
+
 
 }
