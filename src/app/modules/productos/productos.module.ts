@@ -48,7 +48,7 @@ import {ProductoService} from './services/productos.service'
     ChartsModule,
     FileUploadModule,
     SharedModule,
-    MatStepperModule,
+    MatStepperModule,//FALTABA ESTO
     HttpClientModule,
     RouterModule.forChild(ProductosRoutes)//LEVANTA LOS MODULOS HIJO
   ],

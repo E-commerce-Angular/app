@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 @Component({
     selector: 'app-producto',
     templateUrl: 'crear-producto.component.html',
-    styleUrls: ['crear-producto.component.scss']
+    styleUrls: ['crear-producto.component.css']
 })
 
 export class CrearProductoComponent implements OnInit{
