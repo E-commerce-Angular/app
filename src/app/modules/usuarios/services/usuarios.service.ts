@@ -2,14 +2,18 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 
 @Injectable()
-export class UsuarioService{
-    private usuarioUrl = 'http://localhost:3002/api/modules/usuarios';//VA HASTA LA RUTA DEL MODULO, SE CONCANTENA EL RESTO
-    
-    constructor(private http: HttpClient){}
+export class UsuarioService {
+  private usuarioUrl = "http://localhost:3002/api/modules/usuarios"; //VA HASTA LA RUTA DEL MODULO, SE CONCANTENA EL RESTO
 
-    getUsuarios(){
-        return this.http.get(this.usuarioUrl + '/usuarios')
-    }
+  constructor(private http: HttpClient) {}
+
+  guardarUsuario(usuario: any) {
+    return this.http.post(this.usuarioUrl + "/usuario", usuario);
+  }
+
+  getUsuarios() {
+    return this.http.get(this.usuarioUrl + "/usuarios");
+  }
 
 
 }
