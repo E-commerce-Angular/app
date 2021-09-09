@@ -22,12 +22,6 @@ export class CrearProductoComponent implements OnInit{
             disponible:[""]
         });
     }
-    //ESTO ACA NO VA
-    // getProductos(){
-    //     this.productoService.getProductos().subscribe(data =>{
-    //         //debugger; 
-    //     })
-
     
     submit(){
         console.log(this.productoFrom.value);
