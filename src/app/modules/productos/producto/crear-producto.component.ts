@@ -1,6 +1,8 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
+//import { ProductoService } from "../services/productos.service";
+
 @Component({
     selector: 'app-producto',
     templateUrl: 'crear-producto.component.html',
@@ -34,6 +36,10 @@ export class CrearProductoComponent implements OnInit{
         });
 
     }
+
+    }
+    
+
 }
   
 
