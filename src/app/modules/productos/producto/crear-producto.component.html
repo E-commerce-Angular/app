@@ -9,6 +9,21 @@
           <form [formGroup]="productoFrom">
             <ng-template matStepLabel>Escribe tu nombre</ng-template>
             <mat-form-field>
+
+              <input matInput placeholder="Nombre" formControlName="nombreProducto" required>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Precio" formControlName="precio" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Detalle" formControlName="detalle" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Imagen" formControlName="imagen" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Disponible" formControlName="disponible" required>
+
               <input matInput placeholder="nombreProducto" formControlName="nombreProducto" required>
             </mat-form-field>
             <mat-form-field>
@@ -22,6 +37,7 @@
             </mat-form-field>
             <mat-form-field>
                 <input matInput placeholder="disponible" formControlName="disponible" required>
+
             </mat-form-field>
           </form>
         </mat-step>

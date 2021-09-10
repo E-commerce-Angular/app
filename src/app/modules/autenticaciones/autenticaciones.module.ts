@@ -24,10 +24,9 @@ import { SharedModule } from './../../shared/shared.module';
 
 import { MatStepperModule } from '@angular/material/stepper';
 
-import { CrearUsuarioComponent } from './usuario/crear-usuario.component';
-import { ConsultarUsuarioComponent } from './consulta-usuario/consulta-usuario.component';
-import { UsuariosRoutes } from './usuarios.routing';
-import {UsuarioService} from './services/usuarios.service'
+import { AutenticacionesRoutes } from './autenticaciones.routing';
+import { RegistrarUsuarioComponent } from './registro-usuario/registro-usuario.component';
+import { AutenticacionService } from './services/autenticaciones.service';
 
 @NgModule({
   imports: [
@@ -54,14 +53,13 @@ import {UsuarioService} from './services/usuarios.service'
     SharedModule,
     HttpClientModule,
     MatStepperModule,
-    RouterModule.forChild(UsuariosRoutes)//LEVANTA LOS MODULOS HIJO
+    RouterModule.forChild(AutenticacionesRoutes)//LEVANTA LOS MODULOS HIJO
   ],
   declarations: [
-    CrearUsuarioComponent,
-    ConsultarUsuarioComponent
+    RegistrarUsuarioComponent
   ],
   providers: [
-    UsuarioService
+    AutenticacionService
   ]
 })
-export class UsuariosModule { }
+export class AutenticacionesModule { }
