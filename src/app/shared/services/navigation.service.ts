@@ -68,7 +68,7 @@ export class NavigationService {
       type: "link",
       tooltip: "Autenticaciones",
       icon: "person",
-      state: "autenticacion/loginUsuario"
+      state: "autenticacion/loguearUsuario"
     }
   ];
 

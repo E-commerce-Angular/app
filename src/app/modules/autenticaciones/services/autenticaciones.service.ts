@@ -12,4 +12,10 @@ export class AutenticacionService {
     return this.http.post(this.usuarioUrl + "/usuario", usuario);
   }
 
+  loguearUsuario(usuario: any) {
+    debugger
+    return this.http.post(this.usuarioUrl + "/usuario", usuario);
+  }
+
+
 }

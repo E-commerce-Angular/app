@@ -27,6 +27,8 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { AutenticacionesRoutes } from './autenticaciones.routing';
 import { RegistrarUsuarioComponent } from './registro-usuario/registro-usuario.component';
 import { AutenticacionService } from './services/autenticaciones.service';
+import {LoginUsuarioComponent} from "./login-usuario/login-usuario.component"; 
+
 
 @NgModule({
   imports: [
@@ -56,7 +58,8 @@ import { AutenticacionService } from './services/autenticaciones.service';
     RouterModule.forChild(AutenticacionesRoutes)//LEVANTA LOS MODULOS HIJO
   ],
   declarations: [
-    RegistrarUsuarioComponent
+    RegistrarUsuarioComponent, 
+    LoginUsuarioComponent
   ],
   providers: [
     AutenticacionService
