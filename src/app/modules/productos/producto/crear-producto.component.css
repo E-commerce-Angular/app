@@ -1,0 +1,19 @@
+.section-products {
+    display: flex;
+    height: 100vh;
+    background-image: url(../../../../assets/images/backgrounds/trianglify-1.png);
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .cont-buttons button:first-child {
+    background-color:#dd424257;
+  }
+  
+  .cont-buttons button:last-child {
+    background-color: #88c782;
+  }
+
+  .p-0{
+      height: 340px;
+  }

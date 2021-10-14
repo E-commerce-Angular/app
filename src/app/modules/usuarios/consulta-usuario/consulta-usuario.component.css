@@ -1,0 +1,42 @@
+.section-userCard {
+  display: flex;
+  background-image: url(../../../../assets/images/backgrounds/trianglify-1.png);
+  flex-wrap: wrap;
+  max-width: 1200px;
+  justify-content: space-between;
+}
+.cardUser-container {
+    max-width: 45%;
+    height: 200px;
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 3px 3px 7px 0px rgba(49, 46, 46, 0.73);
+    margin: 30px auto;  
+  }
+  .text {
+    color: rgb(255, 251, 251);
+  }
+  
+  .cardUser-contenido {
+    width: 100%;
+    padding: 20px;
+    padding-left: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgb(85 149 32 / 42%);
+  }
+  
+  .cardUser-titulo {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+  .cardUser-subtitulo {
+    margin-top: 3px;
+    font-size: 15px;
+    color: rgb(255, 251, 251);
+    font-weight: normal;
+  }
+  

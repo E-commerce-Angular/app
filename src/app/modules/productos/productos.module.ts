@@ -21,7 +21,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { ChartsModule } from 'ng2-charts';
 import { FileUploadModule } from 'ng2-file-upload';
 import { SharedModule } from './../../shared/shared.module';
-import { MatStepperModule } from '@angular/material/stepper'; //FALTABA ESTO
+import { MatStepperModule } from '@angular/material/stepper'; 
 import { CrearProductoComponent } from './producto/crear-producto.component';
 import { ProductosRoutes } from './productos.routing';
 import {ProductoService} from './services/productos.service'

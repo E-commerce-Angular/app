@@ -1,4 +1,5 @@
-<mat-card class="p-0">
+<div class="section-products">
+  <mat-card class="p-0">
     <mat-card-title class="">
       <div class="card-title-text">Registro de Productos</div>
       <mat-divider></mat-divider>
@@ -7,28 +8,31 @@
       <mat-vertical-stepper [linear]="true">
         <mat-step [stepControl]="productoFrom">
           <form [formGroup]="productoFrom">
-            <ng-template matStepLabel>Escribe tu nombre</ng-template>
+            <ng-template matStepLabel>Detalla los campos</ng-template>
             <mat-form-field>
-
+              
               <input matInput placeholder="Nombre" formControlName="nombreProducto" required>
             </mat-form-field>
             <mat-form-field>
               <input matInput placeholder="Precio" formControlName="precio" required>
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Detalle" formControlName="detalle" required>
+              <input matInput placeholder="Detalle" formControlName="detalle" required>
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Imagen" formControlName="imagen" required>
+              <input matInput placeholder="Imagen" formControlName="imagen" required>
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Disponible" formControlName="disponible" required>
-           </mat-form-field>
+              <input matInput placeholder="Disponible" formControlName="disponible" required>
+            </mat-form-field>
           </form>
+          <div class="cont-buttons">
+            <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+          </div>
         </mat-step>
         
         <mat-step>
-          <ng-template matStepLabel>Confirmación</ng-template>
+          <ng-template matStepLabel>Confirma los campos</ng-template>
           <div class="pb-1 mb-1"> Han completado los datos con exito.</div>
           <div class="cont-buttons">
             <button mat-raised-button color="accent" matStepperPrevious>Atras</button>
@@ -38,3 +42,5 @@
       </mat-vertical-stepper>
     </mat-card-content>
   </mat-card>
+  
+</div>

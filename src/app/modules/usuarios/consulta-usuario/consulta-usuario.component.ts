@@ -3,7 +3,7 @@ import { UsuarioService } from "../services/usuarios.service";
 @Component({
   selector: "app-consulta-usuario",
   templateUrl: "consulta-usuario.component.html",
-  styleUrls: ["consulta-usuario.component.scss"],
+  styleUrls: ["consulta-usuario.component.css"],
 })
 
 export class ConsultarUsuarioComponent implements OnInit, OnDestroy {

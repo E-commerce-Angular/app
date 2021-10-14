@@ -3,7 +3,7 @@ import { ProductoService } from "../services/productos.service";
 @Component({
   selector: "app-consulta-producto",
   templateUrl: "consulta-producto.component.html",
-  styleUrls: ["consulta-producto.component.scss"],
+  styleUrls: ["consulta-producto.component.css"],
 })
 
 export class ConsultarProductoComponent implements OnInit, OnDestroy {
