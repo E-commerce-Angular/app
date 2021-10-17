@@ -1,57 +1,13 @@
 <section class="section-userCard">
-    <div class="cardUser-container">
+    <div class="cardUser-container" *ngFor="let usuario of usuarios">
         <div class="cardUser-contenido">
           <div class="cardUser-descripcion">
-            <h3 class="cardUser-titulo text">UserName</h3>
-            <h3 class="cardUser-tipo text">Nombre</h3>
-            <h3 class="cardUser-tipo text">Apellido</h3>
-            <h3 class="cardUser-subtitulo text">Dni</h3>
+            <h3 class="cardUser-titulo text">{{usuario.usuario}}</h3>
+            <h3 class="cardUser-tipo text">Nombre: {{usuario.nombreUsuario}}</h3>
+            <h3 class="cardUser-tipo text">Apellido: {{usuario.apellidoUsuario}}</h3>
+            <h3 class="cardUser-subtitulo text"></h3>
           </div>
         </div>
-        <img height="100%" src="../../../../assets/images/avatars/elyse.png" />
+        <img height="100%" src="../../../../assets/images/avatars/elliot.jpg" />
       </div>
-      <div class="cardUser-container">
-        <div class="cardUser-contenido">
-          <div class="cardUser-descripcion">
-            <h3 class="cardUser-titulo text">UserName</h3>
-            <h3 class="cardUser-tipo text">Nombre</h3>
-            <h3 class="cardUser-tipo text">Apellido</h3>
-            <h3 class="cardUser-subtitulo text">Dni</h3>
-          </div>
-        </div>
-        <img height="100%" src="../../../../assets/images/avatars/helen.jpg" />
-      </div>
-  <div class="cardUser-container">
-    <div class="cardUser-contenido">
-      <div class="cardUser-descripcion">
-        <h3 class="cardUser-titulo text">UserName</h3>
-        <h3 class="cardUser-tipo text">Nombre</h3>
-        <h3 class="cardUser-tipo text">Apellido</h3>
-        <h3 class="cardUser-subtitulo text">Dni</h3>
-      </div>
-    </div>
-    <img height="100%" src="../../../../assets/images/avatars/daniel.jpg" />
-  </div>
-  <div class="cardUser-container">
-    <div class="cardUser-contenido">
-      <div class="cardUser-descripcion">
-        <h3 class="cardUser-titulo text">UserName</h3>
-        <h3 class="cardUser-tipo text">Nombre</h3>
-        <h3 class="cardUser-tipo text">Apellido</h3>
-        <h3 class="cardUser-subtitulo text">Dni</h3>
-      </div>
-    </div>
-    <img height="100%" src="../../../../assets/images/avatars/elliot.jpg" />
-  </div>
-  <div class="cardUser-container">
-    <div class="cardUser-contenido">
-      <div class="cardUser-descripcion">
-        <h3 class="cardUser-titulo text">UserName</h3>
-        <h3 class="cardUser-tipo text">Nombre</h3>
-        <h3 class="cardUser-tipo text">Apellido</h3>
-        <h3 class="cardUser-subtitulo text">Dni</h3>
-      </div>
-    </div>
-    <img height="100%" src="../../../../assets/images/avatars/jenny.jpg" />
-  </div>
 </section>
