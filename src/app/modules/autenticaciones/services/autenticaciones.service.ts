@@ -1,10 +1,11 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { environment } from "environments/environment";
 
 @Injectable()
 export class AutenticacionService {
-  private usuarioUrl = "http://localhost:3002/api/modules/autenticaciones"; //VA HASTA LA RUTA DEL MODULO, SE CONCANTENA EL RESTO
 
+  private usuarioUrl = environment.API + '/modules/autenticaciones';//VA HASTA LA RUTA DEL MODULO, SE CONCANTENA EL RESTO
   constructor(private http: HttpClient) {}
 
   registrarUsuario(usuario: any) {

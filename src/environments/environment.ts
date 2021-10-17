@@ -6,5 +6,6 @@
 export const environment = {
   WS: "http://localhost:3002/",
   production: false,
-  apiURL: 'developmentApi'
+  apiURL: 'developmentApi',
+  API: "//localhost:3002/api",
 };
