@@ -23,7 +23,6 @@ export class LoginUsuarioComponent implements OnInit {
     submit() {
         console.log(this.usuarioForm.value);
         this.loguearUsuario();
-        // alert("Login exitoso!") //CONFIRMACION DE LOGUIN
     }
 
     loguearUsuario() {
@@ -34,7 +33,6 @@ export class LoginUsuarioComponent implements OnInit {
             window.sessionStorage.setItem('jwt', data.token);
           }
         }
-        // this.Router.navigate(["/"])
         );
     }
 }
