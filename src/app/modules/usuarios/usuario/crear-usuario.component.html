@@ -12,6 +12,9 @@
           <form [formGroup]="usuarioForm">
             <ng-template matStepLabel>Detalla los campos</ng-template>
             <mat-form-field>
+              <input matInput placeholder="Email" formControlName="usuario" required>
+            </mat-form-field>
+            <mat-form-field>
               <input matInput placeholder="Nombre" formControlName="nombreUsuario" required>
             </mat-form-field>
             <mat-form-field>

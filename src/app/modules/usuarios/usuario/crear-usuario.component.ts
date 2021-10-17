@@ -15,6 +15,7 @@ export class CrearUsuarioComponent implements OnInit {
 
   ngOnInit() {
     this.usuarioForm = this.fb.group({
+      usuario: ["", Validators.required],
       nombreUsuario: ["", Validators.required],
       apellidoUsuario: ["", Validators.required],
       dni: ["", Validators.required],
@@ -25,11 +26,7 @@ export class CrearUsuarioComponent implements OnInit {
   submit() {
     console.log(this.usuarioForm.value);
     this.guardarUsuario();
-    // this.usuarioForm.setValue({
-    //   nombre: "",
-    //   apellido: "",
-    //   dni: ""
-    // });
+
     alert("Envio de Datos exitoso!") //CONFIRMACION DE ENVIO DE DATOS
     // location.reload(); //REFRESH DE PANTALLA
   }
