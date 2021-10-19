@@ -14,13 +14,13 @@ export class ConsultarProductoComponent implements OnInit, OnDestroy {
     productos: any[] = [];
 
     constructor(private usuarioService: ProductoService) {
-        this.socket = io(environment.WS).on("connect", () => {
+        this.socket = io(environment.WS).on("connect", () => { //Coneccion con socket
             console.log("Socket conectado en angular");
         });
 
-        this.socket.on("crearProducto", (producto: any) => {});
+        this.socket.on("crearProducto", (producto: any) => {}); //Llama a la api con la clave crearProducto. producto es lo que llega
 
-        this.socket.emit("borrarProducto", "Producto Borrado");
+        this.socket.emit("borrarProducto", "Producto Borrado"); //Primero el nombre, luego el objeto
     }
 
     ngOnInit() {
