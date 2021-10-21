@@ -19,6 +19,8 @@ import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { ErrorHandlerService } from "./shared/services/error-handler.service";
 
+import { AutenticacionService } from "./modules/autenticaciones/services/autenticaciones.service";
+
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient) {
     return new TranslateHttpLoader(httpClient);
@@ -37,8 +39,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         SharedModule,
         HttpClientModule,
         PerfectScrollbarModule,
-        FormsModule,     
-        ReactiveFormsModule,   
+        FormsModule,
+        ReactiveFormsModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
@@ -51,6 +53,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ],
     declarations: [AppComponent],
     providers: [
+        AutenticacionService,
         { provide: ErrorHandler, useClass: ErrorHandlerService },
         // { provide: HAMMER_GESTURE_CONFIG, useClass: GestureConfig },
         { provide: PERFECT_SCROLLBAR_CONFIG, useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG },
