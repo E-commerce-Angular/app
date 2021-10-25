@@ -1,28 +1,18 @@
 .cont-buttons {
   display: flex;
-  width: 180px;
-}
-
-.cont-buttons button:first-child {
-  background-color:#dd424257;
+   width: 180px;
 }
 
 .cont-buttons button:last-child {
   background-color: #88c782;
 }
 
-.register-users {
+.login-users {
   display: flex;
-  height: 100vh;
+  height: 90vh;
   background-image: url(../../../../assets/images/backgrounds/trianglify-1.png);
   justify-content: center;
   align-items: flex-start;
+
 }
 
-.p-0{
-    height: 340px;
-}
-
-.ok{
-  background-color: green;
-}

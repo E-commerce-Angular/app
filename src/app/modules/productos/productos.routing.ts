@@ -5,7 +5,7 @@ import { ConsultarProductoComponent } from './consulta-productos/consulta-produc
 
 export const ProductosRoutes: Routes = [
   {
-    path: 'producto',
+    path: '',
     children: [{
       path: 'crearProducto',
       component: CrearProductoComponent,

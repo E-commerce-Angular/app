@@ -28,26 +28,47 @@ interface IBadge {
 export class NavigationService {
   constructor() {}
   iconMenu: IMenuItem[] = [
-     {
-      name: "Productos",
+    {
+      name: "Crear Producto",
       type: "link",
       tooltip: "Productos",
       icon: "qr_code_scanner",
       state: "producto/crearProducto"
     },
     {
-      name: "Usuarios",
+      name: "Consulta Producto",
+      type: "link",
+      tooltip: "Productos",
+      icon: "qr_code_scanner",
+      state: "producto/consultarProducto"
+    },
+    {
+      name: "Crear Usuario",
       type: "link",
       tooltip: "Usuarios",
       icon: "person",
       state: "usuario/crearUsuario"
     },
     {
-      name: "Autenticaciones",
+      name: "Consulta Usuario",
+      type: "link",
+      tooltip: "Usuarios",
+      icon: "person",
+      state: "usuario/consultarUsuario"
+    },
+    {
+      name: "Registro de Usuarios",
       type: "link",
       tooltip: "Autenticaciones",
       icon: "person",
       state: "autenticacion/registrarUsuario"
+    },
+    {
+      name: "Login",
+      type: "link",
+      tooltip: "Autenticaciones",
+      icon: "person",
+      state: "autenticacion/loguearUsuario"
     }
   ];
 

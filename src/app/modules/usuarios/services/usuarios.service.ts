@@ -1,9 +1,10 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-
+import { environment } from "environments/environment";
 @Injectable()
 export class UsuarioService {
-  private usuarioUrl = "http://localhost:3002/api/modules/usuarios"; //VA HASTA LA RUTA DEL MODULO, SE CONCANTENA EL RESTO
+ 
+  private usuarioUrl = environment.API + '/modules/usuarios';//VA HASTA LA RUTA DEL MODULO, SE CONCANTENA EL RESTO
 
   constructor(private http: HttpClient) {}
 

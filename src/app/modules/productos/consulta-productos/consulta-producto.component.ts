@@ -1,23 +1,38 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { ProductoService } from "../services/productos.service";
+
+import { io } from "socket.io-client";
+import { environment } from "./../../../../environments/environment";
+
 @Component({
-  selector: "app-consulta-producto",
-  templateUrl: "consulta-producto.component.html",
-  styleUrls: ["consulta-producto.component.scss"],
+    selector: "app-consulta-producto",
+    templateUrl: "consulta-producto.component.html",
+    styleUrls: ["consulta-producto.component.css"],
 })
-
 export class ConsultarProductoComponent implements OnInit, OnDestroy {
-  constructor(private usuarioService: ProductoService) {}
+    private socket;
+    productos: any[] = [];
 
-  ngOnInit() {
-    this.getProductos();
-  }
-  getProductos() {
-    this.usuarioService.getProductos().subscribe(data => {
-      //debugger;
-    })
-  }
+    constructor(private usuarioService: ProductoService) {
+        this.socket = io(environment.WS).on("connect", () => { //Coneccion con socket
+            console.log("Socket conectado en angular");
+        });
 
-  ngOnDestroy() {}
-  
+        this.socket.on("crearProducto", (producto: any) => {}); //Llama a la api con la clave crearProducto. producto es lo que llega
+
+        this.socket.emit("borrarProducto", "Producto Borrado"); //Primero el nombre, luego el objeto
+    }
+
+    ngOnInit() {
+        this.getProductos();
+    }
+    getProductos() {
+        this.usuarioService.getProductos().subscribe((data: any) => {            
+            if (data.status === "success") {
+                this.productos = data.data;
+            }
+        });
+    }
+
+    ngOnDestroy() {}
 }
