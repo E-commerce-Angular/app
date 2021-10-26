@@ -1,3 +1,16 @@
+<header>
+    <nav>
+    <ul>
+      <li>
+        <a routerLink='/auth/login'>Login </a>
+      </li>
+      <li>
+        <a (click)="registro()">Register </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
 <div class="section-card">
   <div class="card-container" *ngFor="let producto of productos">
     <img height="100%" src="../../../../assets/images/products/speaker-1.jpg" />
@@ -10,3 +23,4 @@
     </div>
   </div>
 </div>
+

@@ -1,3 +1,30 @@
+header {
+  width: 1400px;
+  max-width: 1200px;
+  height: 70px;
+  margin: 0 auto;
+  background-color: #e2d4ed;
+}
+nav {
+  width: 350px;
+  float: right;
+  font-size: 18px;
+}
+
+ul {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+ul > li {
+  list-style: none;
+  font: Arial;
+}
+li:hover {
+  font-size: 19px;
+  text-decoration: line-through;
+  color: white;
+}
 
 .section-card {
   display: flex;
@@ -5,6 +32,7 @@
   flex-wrap: wrap;
   max-width: 1200px;
   justify-content: space-between;
+  margin: 0 auto;
 }
 .card-container {
   max-width: 45%;
@@ -13,7 +41,7 @@
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 3px 3px 7px 0px rgba(49, 46, 46, 0.73);
-  margin: 30px auto;  
+  margin: 30px auto;
 }
 .text {
   color: rgb(255, 251, 251);
