@@ -21,6 +21,8 @@ import { ErrorHandlerService } from "./shared/services/error-handler.service";
 
 import { AutenticacionService } from "./modules/autenticaciones/services/autenticaciones.service";
 
+import { AutocompleteLibModule } from "angular-ng-autocomplete";
+
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient) {
     return new TranslateHttpLoader(httpClient);
@@ -48,6 +50,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
                 deps: [HttpClient],
             },
         }),
+        AutocompleteLibModule,
         InMemoryWebApiModule.forRoot(InMemoryDataService, { passThruUnknownUrl: true }),
         RouterModule.forRoot(rootRouterConfig, { useHash: false }),
     ],

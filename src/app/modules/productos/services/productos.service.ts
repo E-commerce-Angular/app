@@ -1,6 +1,8 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { environment } from "environments/environment";
+import { Observable } from "rxjs";
+
 @Injectable()
 export class ProductoService {
 
@@ -9,6 +11,10 @@ export class ProductoService {
 
   guardarProducto(producto: any) {
     return this.http.post(this.productoUrl + "/producto", producto);
+  }
+
+  getAllProductos(): Observable<any[]>{
+    return this.http.get<any[]>(this.productoUrl+ "/productos"); //Traigo todos los productos
   }
 
   getProductos() {

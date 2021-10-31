@@ -10,3 +10,23 @@
     </div>
   </div>
 </div>
+
+<div class="containter"> 
+  <!--Autocompletado para hacer la busqueda de productos-->
+  <ng-autocomplete 
+  [data]="data$" 
+  [searchKeyword]="keyword" 
+  [itemTemplate]="itemTemplate"
+  [notFoundTemplate]="notFoundTemplate"
+  placeholder="Ingrese el producto"
+  ></ng-autocomplete>
+
+  <ng-template #itemTemplate let-item>
+    <a [innerHTML]="item.name"></a>
+  </ng-template>
+
+  <ng-template #notFoundTemplate let-notFound>
+    <div [innerHTML]="notFound"></div>
+  </ng-template>
+
+</div>
