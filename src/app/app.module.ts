@@ -24,6 +24,7 @@ import { ErrorHandlerService } from "./shared/services/error-handler.service";
 
 import { AutenticacionService } from "./modules/autenticaciones/services/autenticaciones.service";
 import { ProductoService } from "./modules/productos/services/productos.service";
+
  
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);

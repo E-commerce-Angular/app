@@ -8,6 +8,10 @@ import { RoutePartsService } from "./shared/services/route-parts.service";
 import { filter } from 'rxjs/operators';
 // import { LayoutService } from './shared/services/layout.service';
 
+import pdfMake from 'pdfmake/build/pdfmake';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

@@ -5,6 +5,11 @@ import { ProductoService } from "../services/productos.service";
 import { io } from "socket.io-client";
 import { environment } from "./../../../../environments/environment";
 
+import pdfMake from "pdfmake/build/pdfmake";
+import pdfFonts from "pdfmake/build/vfs_fonts";
+import { MatTabBody } from "@angular/material/tabs";
+pdfMake.vsf = pdfFonts.pdfMake.vfs;
+
 @Component({
   selector: "app-consulta-producto",
   templateUrl: "consulta-producto.component.html",
@@ -13,6 +18,7 @@ import { environment } from "./../../../../environments/environment";
 export class ConsultarProductoComponent implements OnInit, OnDestroy {
   private socket;
   productos: any[] = [];
+  pdfMake: any;
 
   constructor(private usuarioService: ProductoService, private router: Router) {
     this.socket = io(environment.WS).on("connect", () => {
@@ -37,5 +43,50 @@ export class ConsultarProductoComponent implements OnInit, OnDestroy {
   registro() {
     this.router.navigate(["auth/registro"]);
   }
+
+  async loadPdfMaker() {
+    if (!this.pdfMake) {
+      const pdfMakeModule = await import('pdfmake/build/pdfmake');
+      const pdfFontsModule = await import('pdfmake/build/vfs_fonts');
+      this.pdfMake = pdfMakeModule.default;
+      this.pdfMake.vfs = pdfFontsModule.default.pdfMake.vfs;
+    }
+  }
+
+  async generarPDF(){
+
+    await this.loadPdfMaker();
+    const def = { 
+      content: [
+        {
+          table: {
+            widths: ['*', '*', '*'],
+            body: [
+              [
+                'NOMBRE DEL PRODUCTO',
+                'PRECIO'
+              ],
+              [
+                this.productos[0].nombreProducto,
+                '$'+this.productos[0].precio
+              ],
+              [
+                this.productos[1].nombreProducto,
+                '$'+this.productos[1].precio
+              ],
+              [
+                this.productos[2].nombreProducto,
+                '$'+this.productos[2].precio
+              ]
+            ]
+          }
+        }
+      ]
+    };
+    
+    this.pdfMake.createPdf(def).open();
+  }
+
   ngOnDestroy() {}
+  
 }
