@@ -24,9 +24,9 @@ import { FileUploadModule } from "ng2-file-upload";
 import { SharedModule } from "./../../shared/shared.module";
 import { MatStepperModule } from "@angular/material/stepper";
 import { CrearProductoComponent } from "./producto/crear-producto.component";
+import { ConsultarProductoComponent } from "./consulta-productos/consulta-producto.component";
 import { ProductosRoutes } from "./productos.routing";
 import { ProductoService } from "./services/productos.service";
-import { ConsultarProductoComponent } from "./consulta-productos/consulta-producto.component";
 @NgModule({
     imports: [
         CommonModule,

@@ -18,6 +18,7 @@ export class RegistrarUsuarioComponent implements OnInit {
             usuario: ["", Validators.required],
             nombreUsuario: ["", Validators.required],
             apellidoUsuario: ["", Validators.required],
+            pics: ["",Validators.required],
             dni: ["", Validators.required],
             password: ["", Validators.required],
         });
@@ -32,4 +33,7 @@ export class RegistrarUsuarioComponent implements OnInit {
     registrarUsuario() {
         this.AutenticacionService.registrarUsuario(this.usuarioForm.value).subscribe((data) => this.Router.navigate(["/"]));
     }
+
+
+    
 }

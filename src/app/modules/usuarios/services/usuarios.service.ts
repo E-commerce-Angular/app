@@ -9,7 +9,6 @@ export class UsuarioService {
   constructor(private http: HttpClient) {}
 
   guardarUsuario(usuario: any) {
-    debugger
     return this.http.post(this.usuarioUrl + "/usuario", usuario);
   }
 

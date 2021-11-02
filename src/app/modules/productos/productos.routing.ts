@@ -5,19 +5,14 @@ import { ConsultarProductoComponent } from './consulta-productos/consulta-produc
 
 export const ProductosRoutes: Routes = [
   {
-    // path: '',
-    // children: [{
-      path: 'crearProducto',
+       path: 'crearProducto',
       component: CrearProductoComponent,
       data: { title: '', breadcrumb: 'PRODUCTO' }
-    // }]
-  },
+   },
   {
-    path: '',
-    children: [{
-      path: 'consultarProducto',
+       path: 'consultarProducto',
       component: ConsultarProductoComponent,
       data: { title: '', breadcrumb: 'PRODUCTO' }
-    }]
+ 
   }
 ];

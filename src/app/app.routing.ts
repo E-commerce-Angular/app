@@ -14,6 +14,7 @@ export const rootRouterConfig: Routes = [
     path: "home",
     component: ConsultarProductoComponent,
   },
+ 
   {
     path: "",
     component: AdminLayoutComponent,
