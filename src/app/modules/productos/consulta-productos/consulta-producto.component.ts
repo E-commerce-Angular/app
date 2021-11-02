@@ -5,11 +5,6 @@ import { ProductoService } from "../services/productos.service";
 import { io } from "socket.io-client";
 import { environment } from "./../../../../environments/environment";
 
-import pdfMake from "pdfmake/build/pdfmake";
-import pdfFonts from "pdfmake/build/vfs_fonts";
-import { MatTabBody } from "@angular/material/tabs";
-pdfMake.vsf = pdfFonts.pdfMake.vfs;
-
 @Component({
   selector: "app-consulta-producto",
   templateUrl: "consulta-producto.component.html",
@@ -44,6 +39,7 @@ export class ConsultarProductoComponent implements OnInit, OnDestroy {
     this.router.navigate(["auth/registro"]);
   }
 
+  //Hace la importacion del pdfMake
   async loadPdfMaker() {
     if (!this.pdfMake) {
       const pdfMakeModule = await import('pdfmake/build/pdfmake');
@@ -56,35 +52,44 @@ export class ConsultarProductoComponent implements OnInit, OnDestroy {
   async generarPDF(){
 
     await this.loadPdfMaker();
-    const def = { 
+
+    //Crea un nuevo array mapeando los datos del array antiguo que queremos con el nuevo
+    //Funciona como un for
+    const registros = this.productos.map((data) => {
+      return [
+        data.nombreProducto,
+        data.precio,
+        data.disponible
+      ]
+    })
+
+    //Crea la tabla
+    const def = {      
       content: [
         {
           table: {
             widths: ['*', '*', '*'],
             body: [
               [
-                'NOMBRE DEL PRODUCTO',
-                'PRECIO'
+              {
+                text: 'NOMBRE DEL PRODUCTO'
+              },
+              {
+                text: 'PRECIO'
+              },
+              {
+                text: 'DISPONIBLE'
+              }
               ],
-              [
-                this.productos[0].nombreProducto,
-                '$'+this.productos[0].precio
-              ],
-              [
-                this.productos[1].nombreProducto,
-                '$'+this.productos[1].precio
-              ],
-              [
-                this.productos[2].nombreProducto,
-                '$'+this.productos[2].precio
-              ]
+              ...registros
             ]
           }
-        }
-      ]
+        }]
     };
     
+    //Crea el pdf y lo abre en una pestaña del navegador
     this.pdfMake.createPdf(def).open();
+
   }
 
   ngOnDestroy() {}
