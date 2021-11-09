@@ -1,0 +1,14 @@
+<div class="map"> 
+    <nav>
+    <ul>
+   <h1>{{ title }}</h1>
+ 
+ <!-- this creates a google map on the page with the given lat/lng from --> 
+ <!-- the component as the initial center of the map: -->
+ <!--agm-maker crea el conteneder del mapa y el agm-map inserta el mapa dentro de éste-->
+ <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+   <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+ </agm-map>
+ </ul>
+ </nav>
+ </div>

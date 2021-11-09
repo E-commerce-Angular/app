@@ -27,7 +27,13 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { AutenticacionesRoutes } from './autenticaciones.routing';
 import { RegistrarUsuarioComponent } from './registro-usuario/registro-usuario.component';
 import { AutenticacionService } from './services/autenticaciones.service';
-import {LoginUsuarioComponent} from "./login-usuario/login-usuario.component"; 
+import {LoginUsuarioComponent} from "./login-usuario/login-usuario.component";
+import { MapsComponent } from './maps/maps.component'; 
+
+import { AgmCoreModule } from '@agm/core';
+
+
+
 
 
 @NgModule({
@@ -55,11 +61,16 @@ import {LoginUsuarioComponent} from "./login-usuario/login-usuario.component";
     SharedModule,
     HttpClientModule,
     MatStepperModule,
+    AgmCoreModule.forRoot({
+      
+      apiKey: 'AIzaSyCk6zRw-qsegdhgWePa8LK_YVg7kte_iwk'
+    }),
+
     RouterModule.forChild(AutenticacionesRoutes)//LEVANTA LOS MODULOS HIJO
   ],
   declarations: [
     RegistrarUsuarioComponent, 
-    LoginUsuarioComponent
+    LoginUsuarioComponent, MapsComponent
   ],
   providers: [
     AutenticacionService

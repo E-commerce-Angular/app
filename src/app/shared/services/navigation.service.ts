@@ -69,6 +69,14 @@ export class NavigationService {
       tooltip: "Autenticaciones",
       icon: "person",
       state: "autenticacion/loguearUsuario"
+    },
+    
+    {
+      name: "Contacto",
+      type: "link",
+      tooltip: "Autenticaciones",
+      icon: "person",
+      state: "autenticacion/mapearUsuario"
     }
   ];
 
