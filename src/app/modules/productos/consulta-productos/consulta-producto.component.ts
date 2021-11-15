@@ -5,6 +5,8 @@ import { ProductoService } from "../services/productos.service";
 import { io } from "socket.io-client";
 import { environment } from "./../../../../environments/environment";
 
+import * as XLSX from 'xlsx';
+
 @Component({
   selector: "app-consulta-producto",
   templateUrl: "consulta-producto.component.html",
@@ -14,13 +16,14 @@ export class ConsultarProductoComponent implements OnInit, OnDestroy {
   private socket;
   productos: any[] = [];
   pdfMake: any;
+  fileName = 'ExcelSheet.xlsx';
 
   constructor(private usuarioService: ProductoService, private router: Router) {
     this.socket = io(environment.WS).on("connect", () => {
       //Coneccion con socket
       console.log("Socket conectado en angular");
     });
-    this.socket.on("crearProducto", (producto: any) => {}); //Llama a la api con la clave crearProducto. producto es lo que llega
+    this.socket.on("crearProducto", (producto: any) => { }); //Llama a la api con la clave crearProducto. producto es lo que llega
     this.socket.emit("borrarProducto", "Producto Borrado"); //Primero el nombre, luego el objeto
   }
 
@@ -49,7 +52,7 @@ export class ConsultarProductoComponent implements OnInit, OnDestroy {
     }
   }
 
-  async generarPDF(){
+  async generarPDF() {
 
     await this.loadPdfMaker();
 
@@ -64,34 +67,49 @@ export class ConsultarProductoComponent implements OnInit, OnDestroy {
     })
 
     //Crea la tabla
-    const def = {      
+    const def = {
       content: [
         {
           table: {
             widths: ['*', '*', '*'],
             body: [
               [
-              {
-                text: 'NOMBRE DEL PRODUCTO'
-              },
-              {
-                text: 'PRECIO'
-              },
-              {
-                text: 'DISPONIBLE'
-              }
+                {
+                  text: 'NOMBRE DEL PRODUCTO'
+                },
+                {
+                  text: 'PRECIO'
+                },
+                {
+                  text: 'DISPONIBLE'
+                }
               ],
               ...registros
             ]
           }
         }]
     };
-    
+
     //Crea el pdf y lo abre en una pestaña del navegador
     this.pdfMake.createPdf(def).open();
 
   }
 
-  ngOnDestroy() {}
-  
+  exportexcel(): void {
+    //Aquí pasamos el Id de la tabla de la que tenemos que llevar los datos al archivo de Excel  
+    let element = document.getElementById('excel-table');
+    const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
+
+    //generar libro de trabajo
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+
+    //Guarda el archivo
+    XLSX.writeFile(wb, this.fileName);
+
+  }
+
+
+  ngOnDestroy() { }
+
 }

@@ -1,5 +1,5 @@
 <header>
-    <nav>
+  <nav>
     <ul>
       <li>
         <a routerLink='/auth/login'>Login </a>
@@ -9,6 +9,9 @@
       </li>
       <li>
         <a (click)="generarPDF()">Generar PDF </a>
+      </li>
+      <li>
+        <a (click)="exportexcel()">Exportar Excel</a>
       </li>
     </ul>
   </nav>
@@ -27,3 +30,18 @@
   </div>
 </div>
 
+<!-- aca se pasa ` id =” excel-table ” 
+y luego se hace referencia al mismo id al método de exportación excel. -->
+
+<table id="excel-table"> 
+  <tr>       
+     <th>Nombre</th> 
+     <th>Precio</th>  
+     <th> Detalle</th> 
+  </tr>    
+  <tr *ngFor="let producto of productos">
+     <td>{{producto.nombreProducto}}</td>  
+     <td>${{producto.precio}}</td> 
+     <td>{{producto.detalle}}</td> 
+    </tr> 
+</table>
