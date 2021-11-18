@@ -33,10 +33,8 @@ export class CrearProductoComponent implements OnInit{
             imagen:"",
             disponible:""
         });
-
     }
-
-    }
+}
     
 
 

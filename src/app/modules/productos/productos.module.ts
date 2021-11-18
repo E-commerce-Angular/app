@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-
+import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
@@ -24,12 +24,18 @@ import { FileUploadModule } from "ng2-file-upload";
 import { SharedModule } from "./../../shared/shared.module";
 import { MatStepperModule } from "@angular/material/stepper";
 import { CrearProductoComponent } from "./producto/crear-producto.component";
+import { ConsultarProductoComponent } from "./consulta-productos/consulta-producto.component";
 import { ProductosRoutes } from "./productos.routing";
 import { ProductoService } from "./services/productos.service";
-import { ConsultarProductoComponent } from "./consulta-productos/consulta-producto.component";
+
+//Se importa Libreria de Autocompletado
+import { AutocompleteLibModule } from "angular-ng-autocomplete";
+
 @NgModule({
     imports: [
         CommonModule,
+        BrowserModule,
+        AutocompleteLibModule,
         FormsModule,
         ReactiveFormsModule,
         MatListModule,

@@ -12,29 +12,35 @@
           <form [formGroup]="usuarioForm">
             <ng-template matStepLabel>Detalla los campos</ng-template>
             <mat-form-field>
-              <input matInput placeholder="Email" formControlName="usuario" required>
+              <input matInput placeholder="Email" formControlName="usuario" required />
             </mat-form-field>
             <mat-form-field>
-              <input matInput placeholder="Nombre" formControlName="nombreUsuario" required>
+              <input matInput placeholder="Nombre" formControlName="nombreUsuario" required/>
             </mat-form-field>
             <mat-form-field>
-              <input matInput placeholder="Apellido" formControlName="apellidoUsuario" required>
+              <input matInput placeholder="Apellido" formControlName="apellidoUsuario" required/>
             </mat-form-field>
             <mat-form-field>
-              <input matInput placeholder="Dni" formControlName="dni" required maxlength="8">
-            </mat-form-field> 
+              <input matInput placeholder="Dni" formControlName="dni" required maxlength="8"/>
+            </mat-form-field>
             <mat-form-field>
-              <input matInput placeholder="Password" formControlName="password" required type="password">
-            </mat-form-field> 
-          </form>
+              <input matInput placeholder="Password" formControlName="password" required type="password"/>
+            </mat-form-field>
+            <input type="file" placeholder="Imagen" id="pic" formControlName="pics" required (change)="captura($event)"/>
+            <div *ngIf="previsualizacion">
+              <img width="60px" [src]="previsualizacion" alt="" />
+            </div>
+          </form>         
           <div class="cont-buttons">
-            <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+            <button mat-raised-button color="primary" matStepperNext>
+              Siguiente
+            </button>
           </div>
         </mat-step>
-        
+
         <mat-step>
           <ng-template matStepLabel>Confirma los campos</ng-template>
-          <div class="pb-1 mb-1"> Has rellenado el formulario con exito.</div>
+          <div class="pb-1 mb-1">Has rellenado el formulario con exito.</div>
           <div class="cont-buttons">
             <button mat-raised-button color="accent" matStepperPrevious>Atras</button>
             <button mat-raised-button color="primary" matStepperNext (click)="submit()">Confirmar</button>
@@ -43,5 +49,5 @@
         
       </mat-vertical-stepper>
     </mat-card-content>
-  </mat-card>  
+  </mat-card>
 </div>

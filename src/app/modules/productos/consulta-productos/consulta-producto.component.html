@@ -1,28 +1,28 @@
-<div class="section-card">
-  <div class="card-container" *ngFor="let producto of productos">
-    <img height="100%" src="../../../../assets/images/products/speaker-1.jpg" />
-    <div class="card-contenido">
-      <div class="card-descripcion">
-        <h3 class="card-titulo text">{{producto.nombreProducto}}</h3>
-        <h4 class="card-tipo text">${{producto.precio}}</h4>
-        <h4 class="card-subtitulo text">{{producto.detalle}}</h4>
-      </div>
-    </div>
-  </div>
-</div>
+<header>
+  <nav>
+  <ul>
+    <li>
+      <a routerLink='/auth/login'>Login </a>
+    </li>
+    <li>
+      <a (click)="registro()">Register </a>
+    </li>
+  </ul>
+</nav>
+</header>
 
-<div class="containter"> 
+<div class="containter">
   <!--Autocompletado para hacer la busqueda de productos-->
   <ng-autocomplete 
   [data]="data$" 
-  [searchKeyword]="keyword" 
+  [searchKeyword]="keyword"
   [itemTemplate]="itemTemplate"
   [notFoundTemplate]="notFoundTemplate"
   placeholder="Ingrese el producto"
   ></ng-autocomplete>
 
   <ng-template #itemTemplate let-item>
-    <a [innerHTML]="item.name"></a>
+    <a [innerHTML]="item.nombreProducto"></a>
   </ng-template>
 
   <ng-template #notFoundTemplate let-notFound>
@@ -30,3 +30,17 @@
   </ng-template>
 
 </div>
+
+<div class="section-card">
+<div class="card-container" *ngFor="let producto of productos">
+  <img height="100%" src="../../../../assets/images/products/speaker-1.jpg" />
+  <div class="card-contenido">
+    <div class="card-descripcion">
+      <h3 class="card-titulo text">{{producto.nombreProducto}}</h3>
+      <h4 class="card-tipo text">${{producto.precio}}</h4>
+      <h4 class="card-subtitulo text">{{producto.detalle}}</h4>
+    </div>
+  </div>
+</div>  
+</div>
+

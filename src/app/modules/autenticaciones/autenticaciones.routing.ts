@@ -5,20 +5,16 @@ import {LoginUsuarioComponent} from "./login-usuario/login-usuario.component"
 
 export const AutenticacionesRoutes: Routes = [
   {
-    path: 'autenticacion',
-    children: [{
-      path: 'registrarUsuario',
-      component: RegistrarUsuarioComponent,
-      data: { title: '', breadcrumb: 'AUTENTICACION' }
-    }]
-  },
-  {
-    path: 'autenticacion',
-    children: [{
-      path: 'loguearUsuario',
+    path: 'login',
       component: LoginUsuarioComponent,
       data: { title: '', breadcrumb: 'AUTENTICACION' }
-    }]
-  }
+   
+  },
+  {
+    path: 'registro',
+      component: RegistrarUsuarioComponent,
+      data: { title: '', breadcrumb: 'AUTENTICACION' }
+
+  },
 
 ];

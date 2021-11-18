@@ -9,14 +9,13 @@ export class AutenticacionService {
   constructor(private http: HttpClient) {}
 
   registrarUsuario(usuario: any) {
-    debugger
-    return this.http.post(this.usuarioUrl + "/registro", usuario);
+     return this.http.post(this.usuarioUrl + "/registro", usuario);
   }
 
   loguearUsuario(usuario: any) {
-    debugger
-    return this.http.post(this.usuarioUrl + "/login", usuario);
+     return this.http.post(this.usuarioUrl + "/login", usuario);
   }
+  
 
 
 }

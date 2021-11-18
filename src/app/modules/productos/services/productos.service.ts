@@ -13,13 +13,10 @@ export class ProductoService {
     return this.http.post(this.productoUrl + "/producto", producto);
   }
 
-  getAllProductos(): Observable<any[]>{
-    return this.http.get<any[]>(this.productoUrl+ "/productos"); //Traigo todos los productos
-  }
-
   getProductos() {
     return this.http.get(this.productoUrl + "/productos");
   }
+
   editarProducto(idProducto, producto) {
     return this.http.put(
       this.productoUrl + "/producto/" + idProducto,

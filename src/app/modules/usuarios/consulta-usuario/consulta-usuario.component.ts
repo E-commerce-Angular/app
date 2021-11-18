@@ -29,14 +29,13 @@ export class ConsultarUsuarioComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.getUsuarios();
   }
-
   
   getUsuarios() {
     this.usuarioService.getUsuarios().subscribe((data : any) => {
-      //debugger;
       if (data.status === "success") {
         this.usuarios = data.data;
-    }
+      }
+    
     })
   }
 
