@@ -30,6 +30,7 @@ export class ConsultarProductoComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.getProductos();
   }
+  
   getProductos() {
     this.usuarioService.getProductos().subscribe((data: any) => {
       if (data.status === "success") {

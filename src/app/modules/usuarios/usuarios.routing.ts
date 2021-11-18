@@ -1,17 +1,22 @@
-import { Routes } from "@angular/router";
+import { Routes } from '@angular/router'
 
-import { CrearUsuarioComponent } from "./usuario/crear-usuario.component";
-import { ConsultarUsuarioComponent } from "./consulta-usuario/consulta-usuario.component";
+import { CrearUsuarioComponent } from './usuario/crear-usuario.component'
+import { ConsultarUsuarioComponent } from './consulta-usuario/consulta-usuario.component'
 
 export const UsuariosRoutes: Routes = [
   {
     path: 'crearUsuario',
     component: CrearUsuarioComponent,
-    data: { title: "", breadcrumb: "USUARIO" },
+    data: { title: '', breadcrumb: 'USUARIO' },
+  },
+  {
+    path: 'crearUsuario/:id',
+    component: CrearUsuarioComponent,
+    data: { title: '', breadcrumb: 'EDITAR USUARIO' },
   },
   {
     path: 'consultarUsuario',
     component: ConsultarUsuarioComponent,
-    data: { title: "", breadcrumb: "USUARIO" },
+    data: { title: '', breadcrumb: 'USUARIO' },
   },
-];
+]

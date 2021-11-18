@@ -6,8 +6,13 @@
             <h3 class="cardUser-tipo text">Nombre: {{usuario.nombreUsuario}}</h3>
             <h3 class="cardUser-tipo text">Apellido: {{usuario.apellidoUsuario}}</h3>
             <h3 class="cardUser-subtitulo text"></h3>
+            <button mat-fab (click)="editarUsuario(usuario._id)" color="warn" >
+              <mat-icon>edit</mat-icon>
+            </button>
           </div>
         </div>
         <img height="100%" src="../../../../assets/images/avatars/elliot.jpg" />
+        
       </div>
+      
 </section>
