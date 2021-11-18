@@ -45,33 +45,6 @@ export const rootRouterConfig: Routes = [
       }
     ],
   },
-  // {
-  //   path: "",
-  //   component: AuthLayoutComponent,
-  //   children: [
-  //     {
-  //       path: "sessions",
-  //       loadChildren: () =>
-  //         import("./views/sessions/sessions.module").then(
-  //           m => m.SessionsModule
-  //         ),
-  //       data: { title: "Session" }
-  //     }
-  //   ]
-  // },
-  // {
-  //   path: "",
-  //   component: AdminLayoutComponent,
-  //   canActivate: [AuthGuard],
-  //   children: [
-  //     {
-  //       path: "others",
-  //       loadChildren: () =>
-  //         import("./views/others/others.module").then(m => m.OthersModule),
-  //       data: { title: "Others", breadcrumb: "OTHERS" }
-  //     }
-  //   ]
-  // },
   {
     path: "**",
     redirectTo: "sessions/404",
