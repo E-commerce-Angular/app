@@ -1,3 +1,22 @@
+<header>
+  <nav>
+    <ul>
+      <li>
+        <a routerLink='/auth/login'>Login </a>
+      </li>
+      <li>
+        <a (click)="registro()">Register </a>
+      </li>
+      <li>
+        <a (click)="generarPDF()">Generar PDF </a>
+      </li>
+      <li>
+        <a (click)="exportexcel()">Exportar Excel</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
 <div class="section-card">
   <div class="card-container" *ngFor="let producto of productos">
     <img height="100%" src="../../../../assets/images/products/speaker-1.jpg" />
@@ -10,3 +29,19 @@
     </div>
   </div>
 </div>
+
+<!-- aca se pasa ` id =” excel-table ” 
+y luego se hace referencia al mismo id al método de exportación excel. -->
+
+<table id="excel-table"> 
+  <tr>       
+     <th>Nombre</th> 
+     <th>Precio</th>  
+     <th> Detalle</th> 
+  </tr>    
+  <tr *ngFor="let producto of productos">
+     <td>{{producto.nombreProducto}}</td>  
+     <td>${{producto.precio}}</td> 
+     <td>{{producto.detalle}}</td> 
+    </tr> 
+</table>

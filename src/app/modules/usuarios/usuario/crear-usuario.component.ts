@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { DomSanitizer } from "@angular/platform-browser";
 import { Router } from "@angular/router";
 import { UsuarioService } from "../services/usuarios.service";
 
@@ -10,8 +11,15 @@ import { UsuarioService } from "../services/usuarios.service";
 })
 export class CrearUsuarioComponent implements OnInit {
   usuarioForm: FormGroup;
+  public archivos: [];
+  public previsualizacion: string;
 
-  constructor(private UsuarioService: UsuarioService, private Router: Router, private fb: FormBuilder) {}
+  constructor(
+    private UsuarioService: UsuarioService,
+    private Router: Router,
+    private fb: FormBuilder,
+    private sanitizer: DomSanitizer
+  ) {}
 
   ngOnInit() {
     this.usuarioForm = this.fb.group({
@@ -19,7 +27,7 @@ export class CrearUsuarioComponent implements OnInit {
       nombreUsuario: ["", Validators.required],
       apellidoUsuario: ["", Validators.required],
       dni: ["", Validators.required],
-      password: ["", Validators.required]
+      password: ["", Validators.required],
     });
   }
 
@@ -27,12 +35,13 @@ export class CrearUsuarioComponent implements OnInit {
     console.log(this.usuarioForm.value);
     this.guardarUsuario();
 
-    alert("Envio de Datos exitoso!") //CONFIRMACION DE ENVIO DE DATOS
+    alert("Envio de Datos exitoso!"); //CONFIRMACION DE ENVIO DE DATOS
     // location.reload(); //REFRESH DE PANTALLA
   }
 
-  guardarUsuario(){this.UsuarioService.guardarUsuario(this.usuarioForm.value).subscribe(
-    data => this.Router.navigate(['/'])
-  )}
-
+  guardarUsuario() {
+    this.UsuarioService.guardarUsuario(this.usuarioForm.value).subscribe(
+      (data) => this.Router.navigate(["/"])
+    );
+  }
 }
